@@ -9,8 +9,8 @@
  int main()
  {	
 		SystemInit();
-	 NVIC_PriorityGroupConfig( NVIC_PriorityGroup_4);//优先级设置  全为抢占式优先级
-	 SysTick_Config(SystemCoreClock / 1000);			//uCOS时基1ms
+		NVIC_PriorityGroupConfig( NVIC_PriorityGroup_4);//优先级设置  全为抢占式优先级
+		SysTick_Config(SystemCoreClock / 1000);			//uCOS时基1ms
 		while(1);
  }
 
