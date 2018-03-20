@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\DRIVER;..\MAIN;..\STM32F4xx_StdPeriph_Driver\inc;..\CMSIS-Include</IncludePath>
+              <IncludePath>..\CORE;..\DRIVER;..\MAIN;..\STM32F4xx_StdPeriph_Driver\inc;..\CMSIS-Include;..\PERPH</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -447,6 +447,11 @@
               <FileName>flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\DRIVER\FLASH\flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\DRIVER\DELAY\delay.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -667,6 +672,16 @@
               <FileName>stm32f4xx_wwdg.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_wwdg.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>PERPH</GroupName>
+          <Files>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\PERPH\LED\led.c</FilePath>
             </File>
           </Files>
         </Group>

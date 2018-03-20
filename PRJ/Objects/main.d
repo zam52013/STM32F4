@@ -1,4 +1,5 @@
 .\objects\main.o: ..\MAIN\main.c
+.\objects\main.o: ..\MAIN\main.h
 .\objects\main.o: ..\CORE\stm32f4xx.h
 .\objects\main.o: ..\CMSIS-Include\core_cm4.h
 .\objects\main.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -34,3 +35,9 @@
 .\objects\main.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
 .\objects\main.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\objects\main.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\objects\main.o: ..\DRIVER\ad.h
+.\objects\main.o: ..\DRIVER\da.h
+.\objects\main.o: ..\DRIVER\usart.h
+.\objects\main.o: ..\DRIVER\flash.h
+.\objects\main.o: ..\DRIVER\delay.h
+.\objects\main.o: ..\PERPH\led.h

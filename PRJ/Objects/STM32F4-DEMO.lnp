@@ -6,6 +6,7 @@
 ".\objects\da.o"
 ".\objects\usart.o"
 ".\objects\flash.o"
+".\objects\delay.o"
 ".\objects\main.o"
 ".\objects\misc.o"
 ".\objects\stm32f4xx_adc.o"
@@ -48,6 +49,7 @@
 ".\objects\stm32f4xx_tim.o"
 ".\objects\stm32f4xx_usart.o"
 ".\objects\stm32f4xx_wwdg.o"
+".\objects\led_1.o"
 --strict --scatter ".\Objects\STM32F4-DEMO.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
