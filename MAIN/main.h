@@ -18,5 +18,7 @@
  #include "delay.h"
  #include "led.h"
  
+ #include "arm_math.h"
+ 
  #endif
  
