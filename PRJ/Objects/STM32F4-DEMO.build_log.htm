@@ -17,7 +17,7 @@ Library Manager: ArmAr.exe V5.05 (build 41)
 Hex Converter:   FromElf.exe V5.05 (build 41)
 CPU DLL:         SARMCM3.DLL V5.12.0.0
 Dialog DLL:      DCM.DLL V1.13.0.0
-Target DLL:      UL2CM3.DLL V1.153.0.0
+    Target DLL: Segger\JL2CM3.dll
 Dialog DLL:      TCM.DLL V1.14.2.0
  
 <h2>Project:</h2>
@@ -26,13 +26,288 @@ Project File Date:  03/20/2018
 
 <h2>Output:</h2>
 Build target 'DEMO'
-".\Objects\STM32F4-DEMO.axf" - 0 Error(s), 0 Warning(s).
+compiling stm32f4xx_it.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\CORE\stm32f4xx_it.c: 1 warning, 0 errors
+compiling system_stm32f4xx.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\CORE\system_stm32f4xx.c: 1 warning, 0 errors
+compiling ad.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\DRIVER\ad.h(43): warning:  #1295-D: Deprecated declaration ADC_Init_All - give arg types
+        void ADC_Init_All();
+..\DRIVER\ad.h(50): warning:  #1-D: last line of file ends without a newline
+        
+..\DRIVER\AD\ad.c(115): warning:  #1-D: last line of file ends without a newline
+        
+..\DRIVER\AD\ad.c: 4 warnings, 0 errors
+compiling da.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\DRIVER\da.h(25): warning:  #1295-D: Deprecated declaration DAC_Init_ALL - give arg types
+     void DAC_Init_ALL();
+..\DRIVER\da.h(36): warning:  #1-D: last line of file ends without a newline
+        
+..\DRIVER\DAC\da.c(81): warning:  #1-D: last line of file ends without a newline
+        
+..\DRIVER\DAC\da.c: 4 warnings, 0 errors
+compiling usart.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\DRIVER\usart.h(51): warning:  #1295-D: Deprecated declaration Usart_Init_All - give arg types
+        void Usart_Init_All();
+..\DRIVER\usart.h(59): warning:  #1-D: last line of file ends without a newline
+        
+..\DRIVER\USART\usart.c(156): warning:  #1-D: last line of file ends without a newline
+        }
+..\DRIVER\USART\usart.c: 4 warnings, 0 errors
+compiling flash.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\DRIVER\FLASH\flash.c(64): warning:  #1-D: last line of file ends without a newline
+   }
+..\DRIVER\FLASH\flash.c: 2 warnings, 0 errors
+compiling delay.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\DRIVER\DELAY\delay.c: 1 warning, 0 errors
+compiling main.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\DRIVER\ad.h(43): warning:  #1295-D: Deprecated declaration ADC_Init_All - give arg types
+        void ADC_Init_All();
+..\DRIVER\ad.h(50): warning:  #1-D: last line of file ends without a newline
+        
+..\DRIVER\da.h(25): warning:  #1295-D: Deprecated declaration DAC_Init_ALL - give arg types
+     void DAC_Init_ALL();
+..\DRIVER\da.h(36): warning:  #1-D: last line of file ends without a newline
+        
+..\DRIVER\usart.h(51): warning:  #1295-D: Deprecated declaration Usart_Init_All - give arg types
+        void Usart_Init_All();
+..\DRIVER\usart.h(59): warning:  #1-D: last line of file ends without a newline
+        
+..\PERPH\led.h(56): warning:  #1-D: last line of file ends without a newline
+                
+..\MAIN\main.h(24): warning:  #1-D: last line of file ends without a newline
+   
+..\MAIN\main.c: 9 warnings, 0 errors
+compiling misc.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\misc.c: 1 warning, 0 errors
+compiling stm32f4xx_adc.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_adc.c: 1 warning, 0 errors
+compiling stm32f4xx_can.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_can.c: 1 warning, 0 errors
+compiling stm32f4xx_cec.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cec.c: 1 warning, 0 errors
+compiling stm32f4xx_crc.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_crc.c: 1 warning, 0 errors
+compiling stm32f4xx_cryp.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp.c: 1 warning, 0 errors
+compiling stm32f4xx_cryp_aes.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp_aes.c: 1 warning, 0 errors
+compiling stm32f4xx_cryp_des.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp_des.c: 1 warning, 0 errors
+compiling stm32f4xx_cryp_tdes.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_cryp_tdes.c: 1 warning, 0 errors
+compiling stm32f4xx_dac.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dac.c: 1 warning, 0 errors
+compiling stm32f4xx_dbgmcu.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dbgmcu.c: 1 warning, 0 errors
+compiling stm32f4xx_dcmi.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dcmi.c: 1 warning, 0 errors
+compiling stm32f4xx_dfsdm.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dfsdm.c: 1 warning, 0 errors
+compiling stm32f4xx_dma.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.c: 1 warning, 0 errors
+compiling stm32f4xx_dma2d.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma2d.c: 1 warning, 0 errors
+compiling stm32f4xx_dsi.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dsi.c: 1 warning, 0 errors
+compiling stm32f4xx_exti.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_exti.c: 1 warning, 0 errors
+compiling stm32f4xx_flash.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_flash.c: 1 warning, 0 errors
+compiling stm32f4xx_flash_ramfunc.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_flash_ramfunc.c: 1 warning, 0 errors
+compiling stm32f4xx_fmpi2c.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_fmpi2c.c: 1 warning, 0 errors
+compiling stm32f4xx_gpio.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c: 1 warning, 0 errors
+compiling stm32f4xx_hash.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_hash.c: 1 warning, 0 errors
+compiling stm32f4xx_hash_md5.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_hash_md5.c: 1 warning, 0 errors
+compiling stm32f4xx_hash_sha1.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_hash_sha1.c: 1 warning, 0 errors
+compiling stm32f4xx_i2c.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.c: 1 warning, 0 errors
+compiling stm32f4xx_iwdg.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_iwdg.c: 1 warning, 0 errors
+compiling stm32f4xx_lptim.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_lptim.c: 1 warning, 0 errors
+compiling stm32f4xx_ltdc.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_ltdc.c: 1 warning, 0 errors
+compiling stm32f4xx_pwr.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_pwr.c: 1 warning, 0 errors
+compiling stm32f4xx_qspi.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_qspi.c: 1 warning, 0 errors
+compiling stm32f4xx_rcc.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c: 1 warning, 0 errors
+compiling stm32f4xx_rng.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rng.c: 1 warning, 0 errors
+compiling stm32f4xx_rtc.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rtc.c: 1 warning, 0 errors
+compiling stm32f4xx_sai.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_sai.c: 1 warning, 0 errors
+compiling stm32f4xx_sdio.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_sdio.c: 1 warning, 0 errors
+compiling stm32f4xx_spdifrx.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spdifrx.c: 1 warning, 0 errors
+compiling stm32f4xx_spi.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c: 1 warning, 0 errors
+compiling stm32f4xx_syscfg.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_syscfg.c: 1 warning, 0 errors
+compiling stm32f4xx_tim.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.c: 1 warning, 0 errors
+compiling stm32f4xx_usart.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_usart.c: 1 warning, 0 errors
+compiling stm32f4xx_wwdg.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_wwdg.c: 1 warning, 0 errors
+compiling led.c...
+..\CORE\stm32f4xx.h(108): warning:  #47-D: incompatible redefinition of macro "STM32F40_41xxx"
+    #define STM32F40_41xxx
+..\PERPH\led.h(56): warning:  #1-D: last line of file ends without a newline
+                
+..\PERPH\LED\led.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=4724 RO-data=424 RW-data=68 ZI-data=2180  
+".\Objects\STM32F4-DEMO.axf" - 0 Error(s), 69 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   C:\Users\zhangaiming\Desktop\stm32f4\STM32F4\PRJ\RTE
   d:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.5\Device\Include
 
 <h2>Collection of Component Files used:</h2>
+Load "C:\\Users\\zhangaiming\\Desktop\\stm32f4\\STM32F4\\PRJ\\Objects\\STM32F4-DEMO.axf" 
+Set JLink Project File to "C:\Users\zhangaiming\Desktop\stm32f4\STM32F4\PRJ\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZG" selected (1024 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.91b, compiled Sep 15 2014 09:17:56
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.30
+S/N : 36310083 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZG
+VTarget = 3.304V
+State of Pins: 
+TCK: 0, TDI: 1, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
 </pre>
 </body>
 </html>

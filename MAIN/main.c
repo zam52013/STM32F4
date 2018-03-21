@@ -16,7 +16,16 @@
 	DAC_Init_ALL();
 	Usart_Init_All();
 	 LED_Init();
-	 while(1);
+	 while(1)
+	 {
+		if(TIME_FLAG.time_sub.flag_2hz)
+		{
+			TIME_FLAG.time_sub.flag_2hz=FALSE;
+			LED1_ON_OFF;
+			LED2_ON_OFF;
+			LED3_ON_OFF;
+		}
+	 }
  }
 
 
