@@ -40,10 +40,8 @@ typedef union
 
 extern time_flag TIME_FLAG;
 
-
-void delay_init(u8 SYSCLK);
-void delay_ms(u16 nms);
-void delay_us(u32 nus);
+void Delay_us(u16 num);
+void Delay_ms(u32 num);
 
 #endif
 
