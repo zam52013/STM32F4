@@ -2,7 +2,7 @@
 .\objects\main.o: ..\MAIN\main.h
 .\objects\main.o: ..\CORE\stm32f4xx.h
 .\objects\main.o: ..\CMSIS-Include\core_cm4.h
-.\objects\main.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: ..\CMSIS-Include\core_cmInstr.h
 .\objects\main.o: ..\CMSIS-Include\core_cmFunc.h
 .\objects\main.o: ..\CMSIS-Include\core_cmSimd.h
@@ -43,5 +43,5 @@
 .\objects\main.o: ..\PERPH\led.h
 .\objects\main.o: ..\CMSIS-Include\arm_math.h
 .\objects\main.o: ..\CMSIS-Include\core_cm4.h
-.\objects\main.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\objects\main.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

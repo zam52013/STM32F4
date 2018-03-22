@@ -19,7 +19,7 @@
 		GPIO_InitTypeDef      GPIO_InitStructure;
 		
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_DMA2 |ADCx_CHANNEL_GPIO_CLK_1 | ADCx_CHANNEL_GPIO_CLK_2,ENABLE);  
-		RCC_APB2PeriphClockCmd(ADCx_CLK_1 |ADCx_CLK_2, ENABLE);
+		RCC_APB2PeriphClockCmd(ADCx_CLK_1 | ADCx_CLK_2, ENABLE);
 
 		DMA_InitStructure.DMA_Channel = DMA_CHANNELx_1;  
   		DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)ADCx_DR_ADDRESS_1;

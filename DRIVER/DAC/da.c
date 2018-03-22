@@ -32,7 +32,7 @@
   		----------------------------------------------------------- */
  	 	/* Time base configuration */
   		TIM_TimeBaseStructInit(&TIM_TimeBaseStructure); 
-  		TIM_TimeBaseStructure.TIM_Period = 0xFF;          
+  		TIM_TimeBaseStructure.TIM_Period = 0xF;          
   		TIM_TimeBaseStructure.TIM_Prescaler = 0;       
  	 	TIM_TimeBaseStructure.TIM_ClockDivision = 0;    
  	 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  
@@ -47,8 +47,9 @@
 	static void DAC_Init_IO()
 	{
 		GPIO_InitTypeDef GPIO_InitStructure;
-		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_DMA1 | RCC_APB1Periph_DAC | DACx_CHANNEL_GPIO_CLK_1, ENABLE);
-
+		RCC_AHB1PeriphClockCmd(DACx_CHANNEL_GPIO_CLK_1, ENABLE);
+		RCC_APB1PeriphClockCmd(RCC_APB1Periph_DAC, ENABLE);
+		
 		GPIO_InitStructure.GPIO_Pin = DAC_GPIO_PINx_1;
  		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;
   		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
@@ -61,7 +62,7 @@
 		DAC_InitTypeDef  DAC_InitStructure;
 		DAC_InitStructure.DAC_Trigger = DAC_Trigger_T6_TRGO;
 		DAC_InitStructure.DAC_WaveGeneration = DAC_WaveGeneration_Triangle;
-		DAC_InitStructure.DAC_LFSRUnmask_TriangleAmplitude = DAC_TriangleAmplitude_1023;
+		DAC_InitStructure.DAC_LFSRUnmask_TriangleAmplitude = DAC_TriangleAmplitude_4095;//设置电压值
 		DAC_InitStructure.DAC_OutputBuffer = DAC_OutputBuffer_Enable;
 		DAC_Init(DAC_CHANNEL_1, &DAC_InitStructure);
 
@@ -69,7 +70,7 @@
 		DAC_Cmd(DAC_CHANNEL_1, ENABLE);
 
 		/* Set DAC channel2 DHR12RD register */
-		DAC_SetChannel2Data(DAC_Align_12b_R, 0x100);
+		DAC_SetChannel2Data(DAC_Align_12b_R, 0);//设置升值高度
 	}
 
 	void DAC_Init_ALL()
