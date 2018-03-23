@@ -1,4 +1,4 @@
-Component: ARM Compiler 5.05 update 1 (build 106) Tool: armlink [4d0efa]
+Component: ARM Compiler 5.05 (build 41) Tool: armlink [4d0eb9]
 
 ==============================================================================
 
@@ -3885,26 +3885,26 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       472         40          0          4          0       1791   ad.o
-       174          8          0          0          0       1908   da.o
-       316         32          0         24         32       2499   delay.o
-       156          6          0          0          0        547   led_1.o
-       240         22          0          0          0      26814   main.o
-       140         24          0          0          0       1579   misc.o
-        64         26        392          0       1536        808   startup_stm32f40xx.o
-       392         24          0          0          0       5531   stm32f4xx_adc.o
-       124         18          0          0          0       2479   stm32f4xx_dac.o
-       110          6          0          0          0       2393   stm32f4xx_dma.o
-       246          0          0          0          0       3593   stm32f4xx_gpio.o
-        24          0          0          0          0     325676   stm32f4xx_it.o
-       328         36          0         16          0       4691   stm32f4xx_rcc.o
-       192         28          0          0          0       2992   stm32f4xx_tim.o
-       422          8          0          0          0       4844   stm32f4xx_usart.o
-       340         32          0         20          0       1673   system_stm32f4xx.o
-       466         24          0          5        516       4960   usart.o
+       472         40          0          4          0       1863   ad.o
+       174          8          0          0          0       1984   da.o
+       316         32          0         24         32       2599   delay.o
+       156          6          0          0          0        567   led_1.o
+       240         22          0          0          0      26854   main.o
+       140         24          0          0          0       1635   misc.o
+        64         26        392          0       1536        828   startup_stm32f40xx.o
+       392         24          0          0          0       5679   stm32f4xx_adc.o
+       124         18          0          0          0       2555   stm32f4xx_dac.o
+       110          6          0          0          0       2453   stm32f4xx_dma.o
+       246          0          0          0          0       3701   stm32f4xx_gpio.o
+        24          0          0          0          0     326012   stm32f4xx_it.o
+       328         36          0         16          0       4799   stm32f4xx_rcc.o
+       192         28          0          0          0       3092   stm32f4xx_tim.o
+       422          8          0          0          0       4980   stm32f4xx_usart.o
+       340         32          0         20          0       1753   system_stm32f4xx.o
+       466         24          0          5        516       5084   usart.o
 
     ----------------------------------------------------------------------
-      4224        334        424         72       2084     394778   Object Totals
+      4224        334        424         72       2084     396438   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         18          0          0          3          0          0   (incl. Padding)
 
@@ -3956,8 +3956,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4648        346        424         72       2184     390058   Grand Totals
-      4648        346        424         72       2184     390058   ELF Image Totals
+      4648        346        424         72       2184     391718   Grand Totals
+      4648        346        424         72       2184     391718   ELF Image Totals
       4648        346        424         72          0          0   ROM Totals
 
 ==============================================================================

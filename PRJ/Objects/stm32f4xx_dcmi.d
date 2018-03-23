@@ -2,7 +2,7 @@
 .\objects\stm32f4xx_dcmi.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\objects\stm32f4xx_dcmi.o: ..\CORE\stm32f4xx.h
 .\objects\stm32f4xx_dcmi.o: ..\CMSIS-Include\core_cm4.h
-.\objects\stm32f4xx_dcmi.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\stm32f4xx_dcmi.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\stm32f4xx_dcmi.o: ..\CMSIS-Include\core_cmInstr.h
 .\objects\stm32f4xx_dcmi.o: ..\CMSIS-Include\core_cmFunc.h
 .\objects\stm32f4xx_dcmi.o: ..\CMSIS-Include\core_cmSimd.h

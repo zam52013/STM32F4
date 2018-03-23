@@ -2,7 +2,7 @@
 .\objects\flash.o: ..\DRIVER\flash.h
 .\objects\flash.o: ..\CORE\stm32f4xx.h
 .\objects\flash.o: ..\CMSIS-Include\core_cm4.h
-.\objects\flash.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\flash.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\flash.o: ..\CMSIS-Include\core_cmInstr.h
 .\objects\flash.o: ..\CMSIS-Include\core_cmFunc.h
 .\objects\flash.o: ..\CMSIS-Include\core_cmSimd.h

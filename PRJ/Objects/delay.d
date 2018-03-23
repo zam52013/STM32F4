@@ -2,7 +2,7 @@
 .\objects\delay.o: ..\DRIVER\delay.h
 .\objects\delay.o: ..\CORE\stm32f4xx.h
 .\objects\delay.o: ..\CMSIS-Include\core_cm4.h
-.\objects\delay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\delay.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\delay.o: ..\CMSIS-Include\core_cmInstr.h
 .\objects\delay.o: ..\CMSIS-Include\core_cmFunc.h
 .\objects\delay.o: ..\CMSIS-Include\core_cmSimd.h
