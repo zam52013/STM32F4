@@ -22,7 +22,7 @@
     		TIM6CLK = HCLK / 2 = SystemCoreClock /2 
           
   		TIM6 Update event occurs each TIM6CLK/256 
-
+Êä³öÆµÂÊ=42000000/4096/(TIM_Period+1)
   	Note: 
    			SystemCoreClock variable holds HCLK frequency and is defined in system_stm32f4xx.c file.
    		Each time the core clock (HCLK) changes, user had to call SystemCoreClockUpdate()
