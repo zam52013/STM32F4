@@ -6,15 +6,22 @@
   * @brief   Header for main.c module
   ******************************************************************************/
 #include "main.h"
+
+
  int main()
  {	
 	SystemInit();
 	NVIC_PriorityGroupConfig( NVIC_PriorityGroup_4);//优先级设置  全为抢占式优先级
 	SysTick_Config(SystemCoreClock / 1000);			//uCOS时基1ms
+	Usart_Init_All();
 	ADC_Init_All();
 	DAC_Init_ALL();
-	Usart_Init_All();
-	 LED_Init();
+	LED_Init();
+	 RELAY_Init();
+	 printf("****************************************\r\n");
+	 printf("*              避障雷达                *\r\n");
+	 printf("*             版本号V1.0               *\r\n");
+	 printf("****************************************\r\n");
 	 while(1)
 	 {
 		if(TIME_FLAG.time_sub.flag_1hz)
@@ -23,6 +30,8 @@
 			LED1_ON_OFF;
 			LED2_ON_OFF;
 			LED3_ON_OFF;
+			printf("stm32 test ok\r\n");
+			UART_SendString(UART4,"stm32 test ok\r\n");
 		}
 	 }
  }

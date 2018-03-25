@@ -40,10 +40,16 @@ int fputc(int ch, FILE *f)
 		NVIC_InitTypeDef NVIC_InitStructure;
 		
 		RCC_AHB1PeriphClockCmd(USARTx_TX_GPIO_CLK_1 | USARTx_RX_GPIO_CLK_1,ENABLE);
-		RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1,ENABLE);
+		RCC_AHB1PeriphClockCmd(UARTx_TX_GPIO_CLK_4 | UARTx_RX_GPIO_CLK_4,ENABLE);
 		
+		RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1,ENABLE);
+		RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART4,ENABLE);
+			
 		GPIO_PinAFConfig(USARTx_TX_GPIO_PORT_1,USARTx_TX_SOURCE_1,USARTx_TX_AF_1); 
 		GPIO_PinAFConfig(USARTx_RX_GPIO_PORT_1,USARTx_RX_SOURCE_1,USARTx_RX_AF_1); 
+
+		GPIO_PinAFConfig(UARTx_TX_GPIO_PORT_4,UARTx_TX_SOURCE_4,UARTx_TX_AF_4); 
+		GPIO_PinAFConfig(UARTx_RX_GPIO_PORT_4,UARTx_RX_SOURCE_4,UARTx_RX_AF_4);
 		
 		GPIO_InitStructure.GPIO_Pin = USARTx_TX_PIN_1; 
 		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
@@ -58,6 +64,20 @@ int fputc(int ch, FILE *f)
 		GPIO_InitStructure.GPIO_OType = GPIO_OType_PP; 
 		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
 		GPIO_Init(USARTx_RX_GPIO_PORT_1,&GPIO_InitStructure);
+
+		GPIO_InitStructure.GPIO_Pin = UARTx_TX_PIN_4; 
+		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
+		GPIO_InitStructure.GPIO_OType = GPIO_OType_PP; 
+		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+		GPIO_Init(UARTx_TX_GPIO_PORT_4,&GPIO_InitStructure); 
+		
+		GPIO_InitStructure.GPIO_Pin = UARTx_RX_PIN_4; 
+		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
+		GPIO_InitStructure.GPIO_OType = GPIO_OType_PP; 
+		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+		GPIO_Init(UARTx_RX_GPIO_PORT_4,&GPIO_InitStructure);
 		
 		USART_InitStructure.USART_BaudRate = USART1BOUND;
 		USART_InitStructure.USART_WordLength = USART_WordLength_8b;
@@ -65,15 +85,24 @@ int fputc(int ch, FILE *f)
 		USART_InitStructure.USART_Parity = USART_Parity_No;
 		USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
 		USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
-		
 		USART_Init(USARTx_1, &USART_InitStructure);
 		USART_Cmd(USARTx_1, ENABLE);  
 		USART_ClearFlag(USARTx_1, USART_FLAG_TC);
-		
 		USART_ITConfig(USARTx_1, USART_IT_RXNE, ENABLE);//开启相关中断
 
+		USART_InitStructure.USART_BaudRate = UART4BOUND;
+		USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+		USART_InitStructure.USART_StopBits = USART_StopBits_1;
+		USART_InitStructure.USART_Parity = USART_Parity_No;
+		USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+		USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+		USART_Init(UARTx_4, &USART_InitStructure);
+		USART_Cmd(UARTx_4, ENABLE);  
+		USART_ClearFlag(UARTx_4, USART_FLAG_TC);
+		
+
 		//Usart1 NVIC 配置
-		NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;//串口1中断通道
+		NVIC_InitStructure.NVIC_IRQChannel = USARTx_IRQn_1;//串口1中断通道
 		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=3;//抢占优先级3
 		NVIC_InitStructure.NVIC_IRQChannelSubPriority =3;		//子优先级3
 		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQ通道使能

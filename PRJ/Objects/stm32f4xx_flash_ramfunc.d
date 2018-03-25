@@ -2,7 +2,7 @@
 .\objects\stm32f4xx_flash_ramfunc.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash_ramfunc.h
 .\objects\stm32f4xx_flash_ramfunc.o: ..\CORE\stm32f4xx.h
 .\objects\stm32f4xx_flash_ramfunc.o: ..\CMSIS-Include\core_cm4.h
-.\objects\stm32f4xx_flash_ramfunc.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\stm32f4xx_flash_ramfunc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\stm32f4xx_flash_ramfunc.o: ..\CMSIS-Include\core_cmInstr.h
 .\objects\stm32f4xx_flash_ramfunc.o: ..\CMSIS-Include\core_cmFunc.h
 .\objects\stm32f4xx_flash_ramfunc.o: ..\CMSIS-Include\core_cmSimd.h

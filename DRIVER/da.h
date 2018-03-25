@@ -16,13 +16,13 @@
 	
 	#include "stm32f4xx.h"
 	
-	 #define DAC_CHANNEL_1              DAC_Channel_2
-   #define DACx_CHANNEL_GPIO_CLK_1    RCC_AHB1Periph_GPIOA
-   #define DAC_GPIO_PINx_1                 GPIO_Pin_5
-   #define DAC_GPIO_PORTx_1                GPIOA
+	#define DAC_CHANNEL_1              DAC_Channel_2
+  #define DACx_CHANNEL_GPIO_CLK_1    RCC_AHB1Periph_GPIOA
+  #define DAC_GPIO_PINx_1                 GPIO_Pin_5
+  #define DAC_GPIO_PORTx_1                GPIOA
 
 
-   void DAC_Init_ALL();
+  void DAC_Init_ALL();
    
 	#ifdef __cplusplus
 	}
