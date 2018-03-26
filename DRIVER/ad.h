@@ -42,7 +42,7 @@
    #define ADCx_CHANNEL_GPIO_CLK_2    RCC_AHB1Periph_GPIOA
    #define ADC_GPIO_PINx_2                 GPIO_Pin_7
    #define ADC_GPIO_PORTx_2                GPIOA
-   #define DMA_CHANNELx_2             DMA_Channel_2
+   #define DMA_CHANNELx_2             DMA_Channel_0
    #define DMA_STREAMx_2              DMA2_Stream4
    #define ADCx_DR_ADDRESS_2          ((uint32_t)0x4001204C)
 

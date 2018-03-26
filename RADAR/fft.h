@@ -17,7 +17,11 @@ typedef struct
  float amp;
 }FA_OUT;
 
-extern FA_OUT out_x[FFT_N/2]; //
+extern FA_OUT Q_out_x[FFT_N/2]; //
+extern FA_OUT I_out_x[FFT_N/2]; //
+
+extern FA_OUT Q_out_MAX; //
+extern FA_OUT I_out_MAX; //
 
 float FFT(float I_data[],float Q_data[]);
 

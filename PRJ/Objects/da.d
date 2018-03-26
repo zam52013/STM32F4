@@ -2,7 +2,7 @@
 .\objects\da.o: ..\DRIVER\da.h
 .\objects\da.o: ..\CORE\stm32f4xx.h
 .\objects\da.o: ..\CMSIS-Include\core_cm4.h
-.\objects\da.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\da.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\da.o: ..\CMSIS-Include\core_cmInstr.h
 .\objects\da.o: ..\CMSIS-Include\core_cmFunc.h
 .\objects\da.o: ..\CMSIS-Include\core_cmSimd.h

@@ -93,7 +93,7 @@
   		ADC_Init(ADCx_2, &ADC_InitStructure);
 
 		ADC_RegularChannelConfig(ADCx_1, ADC_CHANNEL_1, 1, ADC_SampleTime_3Cycles);
-		ADC_RegularChannelConfig(ADCx_2, ADC_CHANNEL_2, 2, ADC_SampleTime_3Cycles);
+		ADC_RegularChannelConfig(ADCx_2, ADC_CHANNEL_2, 1, ADC_SampleTime_3Cycles);
 		
 		ADC_DMARequestAfterLastTransferCmd(ADCx_1, ENABLE);
 		ADC_DMARequestAfterLastTransferCmd(ADCx_2, ENABLE);

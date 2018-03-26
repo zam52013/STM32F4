@@ -23,6 +23,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #include "FastMath.h"
 
+
+
 //translate from ADI's dsp library.
 //////////////////////////////////////////////////////////////////////////
 //Get fraction and integer parts of floating point

@@ -330,6 +330,7 @@
 ".\objects\fastmath.o"
 ".\objects\fft.o"
 ".\objects\radar_dete.o"
+".\objects\double.o"
 --strict --scatter ".\Objects\STM32F4-DEMO.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
