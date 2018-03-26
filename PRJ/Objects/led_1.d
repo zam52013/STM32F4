@@ -2,7 +2,7 @@
 .\objects\led_1.o: ..\PERPH\led.h
 .\objects\led_1.o: ..\CORE\stm32f4xx.h
 .\objects\led_1.o: ..\CMSIS-Include\core_cm4.h
-.\objects\led_1.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\led_1.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\led_1.o: ..\CMSIS-Include\core_cmInstr.h
 .\objects\led_1.o: ..\CMSIS-Include\core_cmFunc.h
 .\objects\led_1.o: ..\CMSIS-Include\core_cmSimd.h

@@ -13,6 +13,11 @@
                       2047, 2447, 2831, 3185, 3498, 3750, 3939, 4056, 4095, 4056,
                       3939, 3750, 3495, 3185, 2831, 2447, 2047, 1647, 1263, 909, 
                       599, 344, 155, 38, 0, 38, 155, 344, 599, 909, 1263, 1647};
+					  
+	const uint16_t asaw12bit[32] = {
+                      0, 132, 264,396,528,660,792,924,1056,1188,1320,1452,1584,1716,1848,1980,
+					  	2112,2244,2376,2508,2640,2772,2904,3036,3168,3300,3432,3564,3696,
+					  	3828,3960,4092};
 	static void TIM6_Config(void)
 	{
   		TIM_TimeBaseInitTypeDef    TIM_TimeBaseStructure;
@@ -26,7 +31,6 @@
     		TIM6CLK = HCLK / 2 = SystemCoreClock /2 
           
   		TIM6 Update event occurs each TIM6CLK/256 
-Êä³öÆµÂÊ=42000000/4096/(TIM_Period+1)
   	Note: 
    			SystemCoreClock variable holds HCLK frequency and is defined in system_stm32f4xx.c file.
    		Each time the core clock (HCLK) changes, user had to call SystemCoreClockUpdate()
@@ -78,9 +82,10 @@
 	}
 static void DAC_Ch2_SineWaveConfig(void)
 {
+	DMA_InitTypeDef DMA_InitStructure;
+  DAC_InitTypeDef DAC_InitStructure;
+	
 	 RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_DMA1, ENABLE);
-  DMA_InitTypeDef DMA_InitStructure;
-  DAC_InitTypeDef  DAC_InitStructure;
   /* DAC channel2 Configuration */
   DAC_InitStructure.DAC_Trigger = DAC_Trigger_T6_TRGO;
   DAC_InitStructure.DAC_WaveGeneration = DAC_WaveGeneration_None;

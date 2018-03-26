@@ -2,7 +2,7 @@
 .\objects\relay.o: ..\PERPH\relay.h
 .\objects\relay.o: ..\CORE\stm32f4xx.h
 .\objects\relay.o: ..\CMSIS-Include\core_cm4.h
-.\objects\relay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\relay.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\relay.o: ..\CMSIS-Include\core_cmInstr.h
 .\objects\relay.o: ..\CMSIS-Include\core_cmFunc.h
 .\objects\relay.o: ..\CMSIS-Include\core_cmSimd.h

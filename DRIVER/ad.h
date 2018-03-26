@@ -25,7 +25,17 @@
    #define DMA_CHANNELx_1             DMA_Channel_2
    #define DMA_STREAMx_1              DMA2_Stream0
    #define ADCx_DR_ADDRESS_1          ((uint32_t)0x4001224C)
-		
+/*
+	 #define ADCx_1                     ADC2
+	 #define ADC_CHANNEL_1              ADC_Channel_7
+   #define ADCx_CLK_1                 RCC_APB2Periph_ADC3
+   #define ADCx_CHANNEL_GPIO_CLK_1    RCC_AHB1Periph_GPIOF
+   #define ADC_GPIO_PINx_1                 GPIO_Pin_9
+   #define ADC_GPIO_PORTx_1                GPIOF
+   #define DMA_CHANNELx_1             DMA_Channel_2
+   #define DMA_STREAMx_1              DMA2_Stream0
+   #define ADCx_DR_ADDRESS_1          ((uint32_t)0x4001214C)
+ */  
 	 #define ADCx_2                     ADC1
 	 #define ADC_CHANNEL_2              ADC_Channel_7
    #define ADCx_CLK_2                 RCC_APB2Periph_ADC1
