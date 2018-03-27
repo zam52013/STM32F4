@@ -40,15 +40,15 @@
 		if(TIME_FLAG.time_sub.flag_500hz)
 		{
 			TIME_FLAG.time_sub.flag_500hz=FALSE;
-			if(uhADCxConvertedValue_1<3700&&uhADCxConvertedValue_2<3700)
-				{
-			     I_data[i]=uhADCxConvertedValue_1*3.3/4096;
-			     Q_data[i]=uhADCxConvertedValue_2*3.3/4096;
-			     i++;
-				 if(i>=1024) {i=0;j=1;}
-				}
+		//	if(uhADCxConvertedValue_1<3700&&uhADCxConvertedValue_2<3700)
+//				{
+//			     I_data[i]=uhADCxConvertedValue_1*3.3/4096;
+//			     Q_data[i]=uhADCxConvertedValue_2*3.3/4096;
+//			     i++;
+	//			 if(i>=1024) {i=0;j=1;}
+	//			}
 			
-			}
+		}
 		if(TIME_FLAG.time_sub.flag_10hz&&j==1)
 		{
 			TIME_FLAG.time_sub.flag_10hz=FALSE;		

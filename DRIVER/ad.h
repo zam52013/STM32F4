@@ -47,8 +47,8 @@
    #define ADCx_DR_ADDRESS_2          ((uint32_t)0x4001204C)
 
 
-   	extern __IO uint16_t uhADCxConvertedValue_1;
-	extern __IO uint16_t uhADCxConvertedValue_2;
+   	extern __IO uint16_t uhADCxConvertedValue_1[1024];
+	extern __IO uint16_t uhADCxConvertedValue_2[1024];
 
 	void ADC_Init_All();
 	#ifdef __cplusplus

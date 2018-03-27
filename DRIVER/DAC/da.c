@@ -15,9 +15,12 @@
                       599, 344, 155, 38, 0, 38, 155, 344, 599, 909, 1263, 1647};
 					  
 	const uint16_t asaw12bit[32] = {
-                      0, 132, 264,396,528,660,792,924,1056,1188,1320,1452,1584,1716,1848,1980,
-					  	2112,2244,2376,2508,2640,2772,2904,3036,3168,3300,3432,3564,3696,
-					  	3828,3960,4092};
+					124,191,258,325,392,459,526,593,660,727,794,861,928,995,1062,1129,1196,
+					1263,1330,1397,1464,1531,1598,1665,1732,1799,1866,1933,2000,2067,2134,2201
+                   /* 0,273,546,819,1092,1365,1638,1911,
+					2184,2457,2730,3003,3276,3549,3822,4095,
+					0,273,546,819,1092,1365,1638,1911,
+					2184,2457,2730,3003,3276,3549,3822,4095*/};
 	static void TIM6_Config(void)
 	{
   		TIM_TimeBaseInitTypeDef    TIM_TimeBaseStructure;
@@ -40,8 +43,8 @@
   		----------------------------------------------------------- */
  	 	/* Time base configuration */
   		TIM_TimeBaseStructInit(&TIM_TimeBaseStructure); 
-  		TIM_TimeBaseStructure.TIM_Period = 0xFF;          
-  		TIM_TimeBaseStructure.TIM_Prescaler = 0;       
+  		TIM_TimeBaseStructure.TIM_Period = 0x19F;          
+  		TIM_TimeBaseStructure.TIM_Prescaler = 9;       
  	 	TIM_TimeBaseStructure.TIM_ClockDivision = 0;    
  	 	TIM_TimeBaseStructure.TIM_CounterMode =TIM_CounterMode_Up;  
  	 	TIM_TimeBaseInit(TIM6, &TIM_TimeBaseStructure);
@@ -68,9 +71,10 @@
 	void DAC_Ch2_TriangleConfig(void)
 	{
 		DAC_InitTypeDef  DAC_InitStructure;
+		
 		DAC_InitStructure.DAC_Trigger = DAC_Trigger_T6_TRGO;
 		DAC_InitStructure.DAC_WaveGeneration = DAC_WaveGeneration_Triangle;
-		DAC_InitStructure.DAC_LFSRUnmask_TriangleAmplitude =DAC_TriangleAmplitude_4095;//设置电压值
+		DAC_InitStructure.DAC_LFSRUnmask_TriangleAmplitude =DAC_TriangleAmplitude_1023;//设置电压值
 		DAC_InitStructure.DAC_OutputBuffer = DAC_OutputBuffer_Enable;
 		DAC_Init(DAC_CHANNEL_1, &DAC_InitStructure);
 
@@ -84,11 +88,12 @@ static void DAC_Ch2_SineWaveConfig(void)
 {
 	DMA_InitTypeDef DMA_InitStructure;
   DAC_InitTypeDef DAC_InitStructure;
+	NVIC_InitTypeDef NVIC_InitStructure;
 	
 	 RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_DMA1, ENABLE);
   /* DAC channel2 Configuration */
   DAC_InitStructure.DAC_Trigger = DAC_Trigger_T6_TRGO;
-  DAC_InitStructure.DAC_WaveGeneration = DAC_WaveGeneration_None;
+  DAC_InitStructure.DAC_WaveGeneration = DAC_WaveGeneration_None; 
   DAC_InitStructure.DAC_OutputBuffer = DAC_OutputBuffer_Enable;
   DAC_Init(DAC_Channel_2, &DAC_InitStructure);
 
@@ -96,13 +101,13 @@ static void DAC_Ch2_SineWaveConfig(void)
   DMA_DeInit(DMA1_Stream6);
   DMA_InitStructure.DMA_Channel = DMA_Channel_7;  
   DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)DAC_DHR12R2_ADDRESS;
-  DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)&aSine12bit;
+  DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)&asaw12bit;
   DMA_InitStructure.DMA_DIR = DMA_DIR_MemoryToPeripheral;
   DMA_InitStructure.DMA_BufferSize = 32;
   DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
   DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
   DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
-  DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
+  DMA_InitStructure.DMA_MemoryDataSize =DMA_MemoryDataSize_HalfWord;
   DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
   DMA_InitStructure.DMA_Priority = DMA_Priority_High;
   DMA_InitStructure.DMA_FIFOMode = DMA_FIFOMode_Disable;         
@@ -111,6 +116,14 @@ static void DAC_Ch2_SineWaveConfig(void)
   DMA_InitStructure.DMA_PeripheralBurst = DMA_PeripheralBurst_Single;
   DMA_Init(DMA1_Stream6, &DMA_InitStructure);
 
+
+	NVIC_InitStructure.NVIC_IRQChannel = DMA1_Stream6_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=1;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority =1;		
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			
+	NVIC_Init(&NVIC_InitStructure);	
+
+	DMA_ITConfig(DMA1_Stream6,DMA_IT_TC | DMA_IT_HT, ENABLE);
   /* Enable DMA1_Stream6 */
   DMA_Cmd(DMA1_Stream6, ENABLE);
 
@@ -119,6 +132,11 @@ static void DAC_Ch2_SineWaveConfig(void)
 
   /* Enable DMA for DAC Channel2 */
   DAC_DMACmd(DAC_Channel_2, ENABLE);
+}
+void DMA1_Stream6_IRQHandler()
+{
+	
+
 }
 	void DAC_Init_ALL()
 	{

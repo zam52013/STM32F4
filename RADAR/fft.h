@@ -2,9 +2,9 @@
 #define __FFT_H_
 
 
-#define FFT_N 256      //512
-#define log2N 8   //log2N=9
-#define FS 100
+#define FFT_N 1024      //512
+#define log2N 10   //log2N=9
+#define FS 602
 #define PI 3.141592
 typedef struct
 {
