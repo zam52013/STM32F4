@@ -20,8 +20,8 @@
   #define DACx_CHANNEL_GPIO_CLK_1    RCC_AHB1Periph_GPIOA
   #define DAC_GPIO_PINx_1                 GPIO_Pin_5
   #define DAC_GPIO_PORTx_1                GPIOA
-
-
+ extern float I_data[1024],Q_data[1024];
+extern int data_i,data_flag;
   void DAC_Init_ALL();
    
 	#ifdef __cplusplus

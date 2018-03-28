@@ -27,6 +27,7 @@ typedef union
 	unsigned char time_all;
   struct
 	{
+		unsigned flag_1Khz;
 		unsigned flag_500hz;
 		unsigned flag_100hz;
 		unsigned flag_50hz;

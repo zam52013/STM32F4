@@ -55,6 +55,7 @@ static void time_tick()
 static void times_Flag()
 {
 	frameCounter++;
+	TIME_FLAG.time_sub.flag_1Khz=TRUE;
   if (frameCounter > FRAME_COUNT)
   {
     	frameCounter = 1;

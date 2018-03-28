@@ -8,15 +8,23 @@
   ******************************************************************************/
 	
 	#include "da.h"
+	#include "ad.h"
+	float I_data[1024],Q_data[1024];
+	int data_i=0,data_flag=0;
+	
 	#define DAC_DHR12R2_ADDRESS    0x40007414
 	const uint16_t aSine12bit[32] = {
                       2047, 2447, 2831, 3185, 3498, 3750, 3939, 4056, 4095, 4056,
                       3939, 3750, 3495, 3185, 2831, 2447, 2047, 1647, 1263, 909, 
                       599, 344, 155, 38, 0, 38, 155, 344, 599, 909, 1263, 1647};
 					  
-	const uint16_t asaw12bit[32] = {
-					124,191,258,325,392,459,526,593,660,727,794,861,928,995,1062,1129,1196,
-					1263,1330,1397,1464,1531,1598,1665,1732,1799,1866,1933,2000,2067,2134,2201
+	const uint16_t asaw12bit[64] = {
+					124,157,190,223,256,289,322,355,388,421,454,487,520,553,586,619,
+					652,685,718,751,784,817,850,883,916,949,982,1015,1048,1081,1114,1147,
+					1180,1213,1246,1279,1312,1345,1378,1411,1444,1477,1510,1543,1576,1609,1642,1675,1708,1741,
+					1774,1807,1840,1873,1906,1939,1972,2005,2038,2071,2104,2137,2170,2203
+					/*124,191,258,325,392,459,526,593,660,727,794,861,928,995,1062,1129,1196,
+					1263,1330,1397,1464,1531,1598,1665,1732,1799,1866,1933,2000,2067,2134,2201*/
                    /* 0,273,546,819,1092,1365,1638,1911,
 					2184,2457,2730,3003,3276,3549,3822,4095,
 					0,273,546,819,1092,1365,1638,1911,
@@ -43,7 +51,7 @@
   		----------------------------------------------------------- */
  	 	/* Time base configuration */
   		TIM_TimeBaseStructInit(&TIM_TimeBaseStructure); 
-  		TIM_TimeBaseStructure.TIM_Period = 0x19F;          
+  		TIM_TimeBaseStructure.TIM_Period = 0xDA;          
   		TIM_TimeBaseStructure.TIM_Prescaler = 9;       
  	 	TIM_TimeBaseStructure.TIM_ClockDivision = 0;    
  	 	TIM_TimeBaseStructure.TIM_CounterMode =TIM_CounterMode_Up;  
@@ -103,7 +111,7 @@ static void DAC_Ch2_SineWaveConfig(void)
   DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)DAC_DHR12R2_ADDRESS;
   DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)&asaw12bit;
   DMA_InitStructure.DMA_DIR = DMA_DIR_MemoryToPeripheral;
-  DMA_InitStructure.DMA_BufferSize = 32;
+  DMA_InitStructure.DMA_BufferSize = 64;
   DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
   DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
   DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
@@ -118,8 +126,8 @@ static void DAC_Ch2_SineWaveConfig(void)
 
 
 	NVIC_InitStructure.NVIC_IRQChannel = DMA1_Stream6_IRQn;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=1;
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority =1;		
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=3;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority =2;		
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			
 	NVIC_Init(&NVIC_InitStructure);	
 
@@ -134,8 +142,19 @@ static void DAC_Ch2_SineWaveConfig(void)
   DAC_DMACmd(DAC_Channel_2, ENABLE);
 }
 void DMA1_Stream6_IRQHandler()
-{
-	
+{   
+	DMA_ClearITPendingBit(DMA1_Stream6,DMA_IT_TCIF6);
+	DMA_ClearITPendingBit(DMA1_Stream6,DMA_IT_HTIF6);
+	I_data[data_i]=uhADCxConvertedValue_1*3.3/4096;
+	Q_data[data_i]=uhADCxConvertedValue_2*3.3/4096;
+	printf("I_data=%f,",I_data[data_i]);
+	printf("Q_data=%f\r\n",Q_data[data_i]);
+	data_i++;
+	if(data_i>=1024) 
+	{
+		data_i=0;
+		data_flag=1;
+	}
 
 }
 	void DAC_Init_ALL()

@@ -8,8 +8,8 @@
   ******************************************************************************/
 	#include "ad.h"
 	
-	__IO uint16_t uhADCxConvertedValue_1[1024] = 0;
-	__IO uint16_t uhADCxConvertedValue_2[1024] = 0;
+	__IO uint16_t uhADCxConvertedValue_1 = 0;
+	__IO uint16_t uhADCxConvertedValue_2= 0;
 	
 	static void ADC_Config(void)
 	{
@@ -25,7 +25,7 @@
   		DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)ADCx_DR_ADDRESS_1;
   		DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)&uhADCxConvertedValue_1;
   		DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
-  		DMA_InitStructure.DMA_BufferSize = 1024;
+  		DMA_InitStructure.DMA_BufferSize = 1;
   		DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
   		DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Disable;
   		DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
@@ -43,7 +43,7 @@
   		DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)ADCx_DR_ADDRESS_2;
   		DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)&uhADCxConvertedValue_2;
   		DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
-  		DMA_InitStructure.DMA_BufferSize = 1024;
+  		DMA_InitStructure.DMA_BufferSize = 1;
   		DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
   		DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Disable;
   		DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
