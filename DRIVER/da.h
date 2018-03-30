@@ -22,6 +22,9 @@
   #define DAC_GPIO_PORTx_1                GPIOA
  extern float I_data[1024],Q_data[1024];
 extern int data_i,data_flag;
+
+extern uint16_t uhADCxConvertedValue_buff1[1024];
+extern uint16_t uhADCxConvertedValue_buff2[1024];
   void DAC_Init_ALL();
    
 	#ifdef __cplusplus

@@ -9,9 +9,11 @@ COMPLEX Idata_x[FFT_N]; //
 
 FA_OUT Q_out_x[FFT_N/2]; //
 FA_OUT I_out_x[FFT_N/2]; //
+FA_OUT IQ_out_x[FFT_N/2]; //
 
 FA_OUT Q_out_MAX; //
 FA_OUT I_out_MAX; //
+FA_OUT IQ_out_MAX; //
 
 
 /*¸´Êý¼Ó·¨*/
@@ -72,6 +74,7 @@ float FFT(float I_data[],float Q_data[])
  COMPLEX top,bottom,xW;
  float Qmaxfre=0.001,Qmaxamp=0;
  float Imaxfre=0.001,Imaxamp=0;
+ float IQmaxfre=0.001,IQmaxamp=0;
  for(i=0;i<FFT_N;i++)
  {
 	 xdata_x[i].real=I_data[i];
@@ -125,6 +128,13 @@ float FFT(float I_data[],float Q_data[])
 	  Qmaxfre=Q_out_x[i].fre;
 	  Qmaxamp=Q_out_x[i].amp;
 	 }	 
+	 IQ_out_x[i].fre=((float)i)*FS/(FFT_N*1.0);
+	 IQ_out_x[i].amp=FastSqrt(xdata_x[i].real*xdata_x[i].real+xdata_x[i].img*xdata_x[i].img);
+	 if(IQ_out_x[i].amp>Imaxamp)
+	 {
+	  IQmaxfre=IQ_out_x[i].fre;
+	  IQmaxamp=IQ_out_x[i].amp;
+	 }	 
  }
  
  I_out_MAX.amp=Imaxamp;
@@ -132,6 +142,9 @@ float FFT(float I_data[],float Q_data[])
 
  Q_out_MAX.amp=Qmaxamp;
  Q_out_MAX.fre=Qmaxfre;	
+ 
+ IQ_out_MAX.amp=IQmaxamp;
+ IQ_out_MAX.fre=IQmaxfre; 
 
  return 1;
 }

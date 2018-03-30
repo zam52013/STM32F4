@@ -57,16 +57,22 @@
 //			
 //		}
         
-		if(TIME_FLAG.time_sub.flag_10hz&&data_flag==1)
-		{
-			TIME_FLAG.time_sub.flag_10hz=FALSE;		
+		if(data_flag==1)
+		{	
+			data_flag=0;
 		    FFT(I_data,Q_data);
-			//printf("I_out_MAX.amp=%f,",I_out_MAX.amp);
-			//printf("I_out_MAX.fre=%f\r\n",I_out_MAX.fre);
 			//printf("Q_out_MAX.amp=%f,",Q_out_MAX.amp);
 			//printf("Q_out_MAX.fre=%f\r\n",Q_out_MAX.fre);
 			
 		}
+		if(TIME_FLAG.time_sub.flag_10hz)
+		{
+			TIME_FLAG.time_sub.flag_10hz=FALSE;
+			printf("IQ_out_MAX.amp=%f,",IQ_out_MAX.amp);
+			printf("IQ_out_MAX.fre=%f\r\n",IQ_out_MAX.fre);
+			printf("dis=%f\r\n",IQ_out_MAX.fre*0.001423825344);
+			
+	 	}
 	 }
  }
 

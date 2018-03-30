@@ -9,8 +9,13 @@
 	
 	#include "da.h"
 	#include "ad.h"
+	#include <string.h>
+	#include <stdio.h>
 	float I_data[1024],Q_data[1024];
 	int data_i=0,data_flag=0;
+
+	uint16_t uhADCxConvertedValue_buff1[1024];
+	uint16_t uhADCxConvertedValue_buff2[1024];
 	
 	#define DAC_DHR12R2_ADDRESS    0x40007414
 	const uint16_t aSine12bit[32] = {
@@ -131,7 +136,7 @@ static void DAC_Ch2_SineWaveConfig(void)
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			
 	NVIC_Init(&NVIC_InitStructure);	
 
-	DMA_ITConfig(DMA1_Stream6,DMA_IT_TC | DMA_IT_HT, ENABLE);
+	DMA_ITConfig(DMA1_Stream6,DMA_IT_TC, ENABLE);
   /* Enable DMA1_Stream6 */
   DMA_Cmd(DMA1_Stream6, ENABLE);
 
@@ -143,18 +148,24 @@ static void DAC_Ch2_SineWaveConfig(void)
 }
 void DMA1_Stream6_IRQHandler()
 {   
+	unsigned int count;
 	DMA_ClearITPendingBit(DMA1_Stream6,DMA_IT_TCIF6);
-	DMA_ClearITPendingBit(DMA1_Stream6,DMA_IT_HTIF6);
-	I_data[data_i]=uhADCxConvertedValue_1*3.3/4096;
-	Q_data[data_i]=uhADCxConvertedValue_2*3.3/4096;
-	printf("I_data=%f,",I_data[data_i]);
-	printf("Q_data=%f\r\n",Q_data[data_i]);
-	data_i++;
-	if(data_i>=1024) 
+	//DMA_ClearITPendingBit(DMA1_Stream6,DMA_IT_HTIF6);
+	//I_data[data_i]=uhADCxConvertedValue_1*3.3/4096;
+	//Q_data[data_i]=uhADCxConvertedValue_2*3.3/4096;
+	for(count=0;count<1024;count++)
 	{
-		data_i=0;
-		data_flag=1;
+		I_data[count]=uhADCxConvertedValue_1[count]*3.3/4096-3.3/2;
+		Q_data[count]=uhADCxConvertedValue_2[count]*3.3/4096-3.3/2;
 	}
+	//printf("I_data=%f,",I_data[data_i]);
+	//printf("Q_data=%f\r\n",Q_data[data_i]);
+	//data_i++;
+	//if(data_i>=1024) 
+	//{
+	//	data_i=0;
+		data_flag=1;
+	//}
 
 }
 	void DAC_Init_ALL()
