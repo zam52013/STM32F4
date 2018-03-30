@@ -130,7 +130,7 @@ float FFT(float I_data[],float Q_data[])
 	 }	 
 	 IQ_out_x[i].fre=((float)i)*FS/(FFT_N*1.0);
 	 IQ_out_x[i].amp=FastSqrt(xdata_x[i].real*xdata_x[i].real+xdata_x[i].img*xdata_x[i].img);
-	 if(IQ_out_x[i].amp>Imaxamp)
+	 if(IQ_out_x[i].amp>IQmaxamp && i<50)
 	 {
 	  IQmaxfre=IQ_out_x[i].fre;
 	  IQmaxamp=IQ_out_x[i].amp;

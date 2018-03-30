@@ -23,16 +23,16 @@
 
 		DMA_InitStructure.DMA_Channel = DMA_CHANNELx_1;  
   		DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)ADCx_DR_ADDRESS_1;
-  		DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)&uhADCxConvertedValue_1;
+  		DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)uhADCxConvertedValue_1;
   		DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
   		DMA_InitStructure.DMA_BufferSize = 1024;
   		DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
-  		DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Disable;
+  		DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
   		DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
   		DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
   		DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
   		DMA_InitStructure.DMA_Priority = DMA_Priority_High;
-  		DMA_InitStructure.DMA_FIFOMode = DMA_FIFOMode_Disable;         
+  		DMA_InitStructure.DMA_FIFOMode = DMA_FIFOMode_Enable;         
   		DMA_InitStructure.DMA_FIFOThreshold = DMA_FIFOThreshold_HalfFull;
   		DMA_InitStructure.DMA_MemoryBurst = DMA_MemoryBurst_Single;
   		DMA_InitStructure.DMA_PeripheralBurst = DMA_PeripheralBurst_Single;
@@ -41,16 +41,16 @@
 
 		DMA_InitStructure.DMA_Channel = DMA_CHANNELx_2;  
   		DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)ADCx_DR_ADDRESS_2;
-  		DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)&uhADCxConvertedValue_2;
+  		DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)uhADCxConvertedValue_2;
   		DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
   		DMA_InitStructure.DMA_BufferSize = 1024;
   		DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
-  		DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Disable;
+  		DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
   		DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
   		DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
   		DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
   		DMA_InitStructure.DMA_Priority = DMA_Priority_High;
-  		DMA_InitStructure.DMA_FIFOMode = DMA_FIFOMode_Disable;         
+  		DMA_InitStructure.DMA_FIFOMode = DMA_FIFOMode_Enable;         
   		DMA_InitStructure.DMA_FIFOThreshold = DMA_FIFOThreshold_HalfFull;
   		DMA_InitStructure.DMA_MemoryBurst = DMA_MemoryBurst_Single;
   		DMA_InitStructure.DMA_PeripheralBurst = DMA_PeripheralBurst_Single;

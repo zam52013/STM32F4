@@ -26,19 +26,35 @@ Project File Date:  03/30/2018
 
 <h2>Output:</h2>
 Build target 'DEMO'
-compiling da.c...
-..\DRIVER\da.h(28): warning:  #1295-D: Deprecated declaration DAC_Init_ALL - give arg types
-    void DAC_Init_ALL();
-..\DRIVER\da.h(39): warning:  #1-D: last line of file ends without a newline
-        
+compiling main.c...
 ..\DRIVER\ad.h(53): warning:  #1295-D: Deprecated declaration ADC_Init_All - give arg types
         void ADC_Init_All();
 ..\DRIVER\ad.h(60): warning:  #1-D: last line of file ends without a newline
         
-..\DRIVER\DAC\da.c: 4 warnings, 0 errors
+..\DRIVER\da.h(28): warning:  #1295-D: Deprecated declaration DAC_Init_ALL - give arg types
+    void DAC_Init_ALL();
+..\DRIVER\da.h(39): warning:  #1-D: last line of file ends without a newline
+        
+..\DRIVER\usart.h(69): warning:  #1295-D: Deprecated declaration Usart_Init_All - give arg types
+        void Usart_Init_All();
+..\DRIVER\usart.h(77): warning:  #1-D: last line of file ends without a newline
+        
+..\PERPH\led.h(82): warning:  #1-D: last line of file ends without a newline
+                
+..\PERPH\relay.h(41): warning:  #1-D: last line of file ends without a newline
+        
+..\MAIN\main.h(25): warning:  #1-D: last line of file ends without a newline
+   
+..\RADAR\fft.h(8): warning:  #47-D: incompatible redefinition of macro "PI" (declared at line 326 of "..\CMSIS-Include\arm_math.h")
+  #define PI 3.141592
+..\MAIN\main.c(29): warning:  #223-D: function "printf" declared implicitly
+         printf("****************************************\r\n");
+..\MAIN\main.c(82): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                        printf("dis=%f\r\n",IQ_out_MAX.fre*0.001423825344);
+..\MAIN\main.c: 12 warnings, 0 errors
 linking...
-Program Size: Code=14126 RO-data=2970 RW-data=100 ZI-data=63628  
-".\Objects\STM32F4-DEMO.axf" - 0 Error(s), 4 Warning(s).
+Program Size: Code=14174 RO-data=2970 RW-data=100 ZI-data=63628  
+".\Objects\STM32F4-DEMO.axf" - 0 Error(s), 12 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   F:\STM32F4-DEMO\PRJ\RTE

@@ -153,10 +153,14 @@ void DMA1_Stream6_IRQHandler()
 	//DMA_ClearITPendingBit(DMA1_Stream6,DMA_IT_HTIF6);
 	//I_data[data_i]=uhADCxConvertedValue_1*3.3/4096;
 	//Q_data[data_i]=uhADCxConvertedValue_2*3.3/4096;
+	if(data_flag==0)
+		{
 	for(count=0;count<1024;count++)
 	{
-		I_data[count]=uhADCxConvertedValue_1[count]*3.3/4096-3.3/2;
-		Q_data[count]=uhADCxConvertedValue_2[count]*3.3/4096-3.3/2;
+		uhADCxConvertedValue_buff1[count]=uhADCxConvertedValue_1[count];
+		uhADCxConvertedValue_buff2[count]=uhADCxConvertedValue_2[count];
+	//	I_data[count]=uhADCxConvertedValue_1[count]*3.3/4096-3.3/2;
+		//Q_data[count]=uhADCxConvertedValue_2[count]*3.3/4096-3.3/2;
 	}
 	//printf("I_data=%f,",I_data[data_i]);
 	//printf("Q_data=%f\r\n",Q_data[data_i]);
@@ -165,6 +169,7 @@ void DMA1_Stream6_IRQHandler()
 	//{
 	//	data_i=0;
 		data_flag=1;
+	}
 	//}
 
 }

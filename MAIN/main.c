@@ -17,6 +17,7 @@
  int main()
  {	
     //int i=0;
+    int count;
 	SystemInit();
 	NVIC_PriorityGroupConfig( NVIC_PriorityGroup_4);//优先级设置  全为抢占式优先级
 	SysTick_Config(SystemCoreClock / 1000);			//uCOS时基1ms
@@ -59,8 +60,16 @@
         
 		if(data_flag==1)
 		{	
-			data_flag=0;
+			
+		   for(count=0;count<1024;count++)
+			{
+				I_data[count]=uhADCxConvertedValue_buff1[count]*3.3/4096-3.3/2;
+				Q_data[count]=uhADCxConvertedValue_buff2[count]*3.3/4096-3.3/2;
+			//	printf("I_data=%f,",I_data[count]);
+	     // printf("Q_data=%f\r\n",Q_data[count]);
+			}
 		    FFT(I_data,Q_data);
+			data_flag=0;
 			//printf("Q_out_MAX.amp=%f,",Q_out_MAX.amp);
 			//printf("Q_out_MAX.fre=%f\r\n",Q_out_MAX.fre);
 			
