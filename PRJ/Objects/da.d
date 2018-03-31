@@ -36,5 +36,8 @@
 .\objects\da.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\objects\da.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 .\objects\da.o: ..\DRIVER\ad.h
+.\objects\da.o: ..\CMSIS-Include\arm_math.h
+.\objects\da.o: ..\CMSIS-Include\core_cm4.h
 .\objects\da.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\da.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\da.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

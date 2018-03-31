@@ -20,6 +20,7 @@
  #include "relay.h"
  
  #include "arm_math.h"
- 
+ extern int flag;
+ void send(float data,float data1);
  #endif
  

@@ -9,6 +9,7 @@
 	
 	#include "da.h"
 	#include "ad.h"
+	 #include "arm_math.h"
 	#include <string.h>
 	#include <stdio.h>
 	float I_data[1024],Q_data[1024];
@@ -155,13 +156,15 @@ void DMA1_Stream6_IRQHandler()
 	//Q_data[data_i]=uhADCxConvertedValue_2*3.3/4096;
 	if(data_flag==0)
 		{
-	for(count=0;count<1024;count++)
-	{
-		uhADCxConvertedValue_buff1[count]=uhADCxConvertedValue_1[count];
-		uhADCxConvertedValue_buff2[count]=uhADCxConvertedValue_2[count];
-	//	I_data[count]=uhADCxConvertedValue_1[count]*3.3/4096-3.3/2;
-		//Q_data[count]=uhADCxConvertedValue_2[count]*3.3/4096-3.3/2;
-	}
+			arm_copy_q15(&uhADCxConvertedValue_1[0],&uhADCxConvertedValue_buff1[0],1024);
+			arm_copy_q15(&uhADCxConvertedValue_2[0],&uhADCxConvertedValue_buff2[0],1024);
+//	for(count=0;count<1024;count++)
+//	{
+//		uhADCxConvertedValue_buff1[count]=uhADCxConvertedValue_1[count];
+//		uhADCxConvertedValue_buff2[count]=uhADCxConvertedValue_2[count];
+//	//	I_data[count]=uhADCxConvertedValue_1[count]*3.3/4096-3.3/2;
+//		//Q_data[count]=uhADCxConvertedValue_2[count]*3.3/4096-3.3/2;
+//	}
 	//printf("I_data=%f,",I_data[data_i]);
 	//printf("Q_data=%f\r\n",Q_data[data_i]);
 	//data_i++;

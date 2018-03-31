@@ -7,13 +7,48 @@
   ******************************************************************************/
 #include "main.h"
 #include <math.h>
-
 #include "fft.h"
 #include "da.h"
+int flag=0;
+void send_data(u8 data)
+{
+ 		while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET); 
+		USART_SendData(USART1 ,data);//·¢ËÍµ±Ç°×Ö·û
+}
 
+void send(float data,float data1)
+{
+  u8 sum=0;
+  u8 data_L,data_H;
+  u8 data1_L,data1_H;
+  data_H=(((u16)(data*32768/2000))>>8);
+  data_L=(((u16)(data*32768/2000))&0x00ff);
 
-
-
+  data1_H=(((u16)(data1/1000*32768/2000))>>8);
+  data1_L=(((u16)(data1/1000*32768/2000))&0x00ff);
+  send_data(0x55);
+  sum+=0x55;
+  send_data(0x52);
+  sum+=0x52;
+  send_data(data_L);
+  sum+=data_L;
+  send_data(data_H);
+  sum+=data_H;
+  send_data(data1_L);
+  sum+=data1_L;
+  send_data(data1_H);
+  sum+=data1_H;
+  send_data(0);
+  sum+=0;
+  send_data(0);
+  sum+=0;
+  send_data(0);
+  sum+=0;
+  send_data(0);
+  sum+=0;  
+  send_data(sum);
+  
+}
  int main()
  {	
     //int i=0;
@@ -74,12 +109,18 @@
 			//printf("Q_out_MAX.fre=%f\r\n",Q_out_MAX.fre);
 			
 		}
-		if(TIME_FLAG.time_sub.flag_10hz)
+		if(TIME_FLAG.time_sub.flag_1hz)
 		{
-			TIME_FLAG.time_sub.flag_10hz=FALSE;
+			TIME_FLAG.time_sub.flag_1hz=FALSE;
+			flag=1;
 			printf("IQ_out_MAX.amp=%f,",IQ_out_MAX.amp);
-			printf("IQ_out_MAX.fre=%f\r\n",IQ_out_MAX.fre);
-			printf("dis=%f\r\n",IQ_out_MAX.fre*0.001423825344);
+			printf("IQ_out_MAX.fre=%f,",IQ_out_MAX.fre);
+			printf("Z_out_MAX.amp=%f,",(float)Z_out_MAX.amp);
+			printf("Z_out_MAX.fre=%f,",(float)Z_out_MAX.fre);
+			printf("db_amp=%f,",db_amp);
+			printf("z_dis=%f\r\n",Z_out_MAX.fre*0.001423825344/2);
+			printf("dis=%f\r\n",IQ_out_MAX.fre*0.001423825344/2);
+			//send(IQ_out_MAX.amp,IQ_out_MAX.fre);
 			
 	 	}
 	 }
