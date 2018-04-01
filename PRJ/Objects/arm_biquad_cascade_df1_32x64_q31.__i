@@ -1,0 +1,7 @@
+-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\DRIVER -I..\MAIN -I..\STM32F4xx_StdPeriph_Driver\inc -I..\CMSIS-Include -I..\PERPH -I..\RADAR
+-I F:\STM32F4-DEMO\PRJ\RTE
+-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.12.0
+-I D:\Keil_v5\ARM\CMSIS\Include
+-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.12.0\Device\Include
+-D__UVISION_VERSION="513" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -D__FPU_PRESENT="1" -D__FPU_USED="1" -DARM_MATH_CM4 -D__CC_ARM --C99
+-o .\objects\arm_biquad_cascade_df1_32x64_q31.o --omf_browse .\objects\arm_biquad_cascade_df1_32x64_q31.crf --depend .\objects\arm_biquad_cascade_df1_32x64_q31.d "..\DSP_LIB\FilteringFunctions\arm_biquad_cascade_df1_32x64_q31.c"
